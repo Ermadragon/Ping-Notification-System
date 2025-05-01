@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Personalized Notification System",
+    "_postman_id": "abc123",
+    "description": "Test all microservice APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Alice\",\n    \"email\": \"alice@example.com\",\n    \"preferences\": {\"notifications\": [\"promotions\", \"order_updates\"]}\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/users/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5001",
+          "path": ["users", "register"]
+        }
+      }
+    },
+    {
+      "name": "Get Unread Notifications",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5002/notifications/<user_id>/unread",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5002",
+          "path": ["notifications", "<user_id>", "unread"]
+        }
+      }
+    },
+    {
+      "name": "Generate Recommendations",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5003/recommendations/generate/<user_id>",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5003",
+          "path": ["recommendations", "generate", "<user_id>"]
+        }
+      }
+    }
+  ]
+}
