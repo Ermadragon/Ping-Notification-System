@@ -1,0 +1,18 @@
+query GetMyProfileAndUnread {
+  me {
+    id
+    name
+    email
+    preferences
+  }
+  unreadNotifications {
+    id
+    type
+    content
+    sentAt
+  }
+}
+
+mutation TriggerRecommendations {
+  generateRecommendations
+}
